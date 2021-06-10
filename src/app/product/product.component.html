@@ -5,15 +5,13 @@
     class="form-control"
     id="productName"
     placeholder="Arama metninizi giriniz"
-    [(ngModel)]="filterText" 
+    [(ngModel)]="filterText"
   />
-   
+
   <div *ngIf="filterText" class="form-text">
-    Su an {{filterText}} aradınız.
+    Su an {{ filterText }} aradınız.
   </div>
 </div>
-
-
 
 <div class="row">
   <!--ürün yoksa noProduct nesnesı gosterılsın-->
@@ -24,7 +22,11 @@
   >
 
   <!-- product cards-->
-  <div  *ngFor="let product of products | productFilter : filterText " class="card" style="width: 18rem">
+  <div
+    *ngFor="let product of products | productFilter: filterText"
+    class="card"
+    style="width: 18rem"
+  >
     <img [src]="product.imageUrl" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">
@@ -33,7 +35,7 @@
       <p class="card-text">
         {{ product.description }}
       </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a (click)="addToCard()" class="btn btn-primary"> Sepete Ekle </a>
     </div>
   </div>
 </div>

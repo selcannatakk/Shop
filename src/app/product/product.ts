@@ -1,8 +1,8 @@
 export class Product{
-    id!:number;
-    name!:string;
-    price!:number;
-    categoryId!:number;
-    description!:string;
-    imageUrl!:string;
+    id :number | undefined;
+    name !:string ;
+    price:number | undefined;
+    categoryId:number | undefined;
+    description :string | undefined;
+    imageUrl:string | undefined;
 }
